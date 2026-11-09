@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Контакты. Магазин предметов для рабочего стола.">
+  <meta name="description" content="Ответы на вопросы о выборе товаров, доставке и оформлении заявки.">
   <title>Контакты — Магазин</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/custom.css">
@@ -32,7 +32,7 @@
   </header>
 
   <main class="container py-4 flex-grow-1">
-    <noscript><div class="alert alert-warning">Для фильтров, выбора товара и проверки заявки нужен JavaScript.</div></noscript>
+    <noscript><div class="alert alert-warning">Включите JavaScript в браузере, чтобы пользоваться фильтрами и формой заявки.</div></noscript>
     <nav aria-label="Хлебные крошки">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
@@ -44,10 +44,10 @@
       <section class="col-12 col-md-5">
         <div class="card h-100">
           <div class="card-body">
-            <h2 class="h4">Как связаться</h2>
+            <h2 class="h4">Остались вопросы?</h2>
             <p>E-mail: <a href="mailto:hello@tochka.example">hello@tochka.example</a></p>
-            <p>Время работы: пн-пт, с 10:00 до 18:00.</p>
-            <p class="text-body-secondary">Контакты и условия приведены для примера учебного магазина.</p>
+            <p>Как выбрать товар, сколько стоит доставка и где посмотреть итог — разобрали в ответах ниже.</p>
+            <p class="text-body-secondary">Магазин пока работает в деморежиме. Почта указана для примера, приём писем ещё не настроен.</p>
             <a class="btn btn-primary" href="order.html">Оставить заявку</a>
           </div>
         </div>
@@ -58,19 +58,19 @@
           <div class="accordion-item">
             <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-order" aria-expanded="true" aria-controls="faq-order">Как выбрать товар?</button></h3>
             <div class="accordion-collapse collapse show" id="faq-order" data-bs-parent="#faq">
-              <div class="accordion-body">Откройте каталог, сравните характеристики и нажмите «Заказать». Выбранный товар автоматически появится в форме заявки.</div>
+              <div class="accordion-body">Загляните в каталог: там можно отобрать товары по цене и категории. У каждого есть описание и характеристики. Когда определитесь, нажмите «Заказать» — товар уже будет выбран в заявке.</div>
             </div>
           </div>
           <div class="accordion-item">
             <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-delivery" aria-expanded="false" aria-controls="faq-delivery">Сколько стоит доставка?</button></h3>
             <div class="accordion-collapse collapse" id="faq-delivery" data-bs-parent="#faq">
-              <div class="accordion-body">В учебном примере доставка стоит 300 ₽, самовывоз бесплатный. Стоимость учитывается в итоговой сумме заявки.</div>
+              <div class="accordion-body">Доставка — 300 ₽, самовывоз — бесплатно. Выберите подходящий вариант в заявке, и его стоимость сразу попадёт в итог.</div>
             </div>
           </div>
           <div class="accordion-item">
-            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-payment" aria-expanded="false" aria-controls="faq-payment">Нужно ли оплачивать заявку?</button></h3>
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-payment" aria-expanded="false" aria-controls="faq-payment">Где посмотреть итоговую сумму?</button></h3>
             <div class="accordion-collapse collapse" id="faq-payment" data-bs-parent="#faq">
-              <div class="accordion-body">Нет. Это учебный сайт без настоящих покупок, платежей и отправки персональных данных.</div>
+              <div class="accordion-body">На странице заявки есть блок «Ваша заявка». Выберите товар, количество и способ получения — в нём сразу появится итог. Оплачивать ничего не нужно: сейчас сайт работает в деморежиме.</div>
             </div>
           </div>
         </div>
@@ -96,11 +96,11 @@
         <div class="modal-body">
           <p class="fw-bold" id="modal-product">Лампа «Линия»</p>
           <p id="modal-price">1 490 ₽</p>
-          <p class="mb-0">В заявке можно указать количество и способ получения.</p>
+          <p class="mb-0">Подходит? Перейдите к заявке — там можно выбрать количество и способ получения.</p>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Продолжить выбор</button>
-          <a class="btn btn-primary" id="modal-order-link" href="order.html?product=lamp">Перейти к заявке</a>
+          <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Ещё посмотрю</button>
+          <a class="btn btn-primary" id="modal-order-link" href="order.html?product=lamp">Оформить заявку</a>
         </div>
       </div>
     </div>

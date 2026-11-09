@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Каталог. Магазин предметов для рабочего стола.">
+  <meta name="description" content="Выберите лампу, органайзер или блокнот по названию, категории и цене.">
   <title>Каталог — Магазин</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/custom.css">
@@ -32,20 +32,20 @@
   </header>
 
   <main class="container py-4 flex-grow-1">
-    <noscript><div class="alert alert-warning">Для фильтров, выбора товара и проверки заявки нужен JavaScript.</div></noscript>
+    <noscript><div class="alert alert-warning">Включите JavaScript в браузере, чтобы пользоваться фильтрами и формой заявки.</div></noscript>
     <nav aria-label="Хлебные крошки">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
         <li class="breadcrumb-item active" aria-current="page">Каталог</li>
       </ol>
     </nav>
-    <h1 class="mb-3">Каталог товаров</h1>
+    <h1 class="mb-3">Что добавим на ваш стол?</h1>
     <div class="row g-4">
       <aside class="col-12 col-lg-3">
         <form class="bg-white border rounded p-3" id="filter-form">
           <h2 class="h5">Фильтры</h2>
           <div class="mb-3">
-            <label class="form-label" for="search">Название</label>
+            <label class="form-label" for="search">Что ищете?</label>
             <input class="form-control" id="search" name="search" type="search" placeholder="Например, лампа">
           </div>
           <div class="mb-3">
@@ -60,12 +60,12 @@
           <div class="mb-3">
             <label class="form-label" for="max-price">Цена до</label>
             <div class="input-group">
-              <input class="form-control" id="max-price" name="max-price" type="number" min="0" placeholder="Любая">
+              <input class="form-control" id="max-price" name="max-price" type="number" min="0" placeholder="Без ограничений">
               <span class="input-group-text">₽</span>
             </div>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="sort">Порядок товаров</label>
+            <label class="form-label" for="sort">Как показать товары?</label>
             <select class="form-select" id="sort" name="sort">
               <option value="default">По умолчанию</option>
               <option value="cheap">Сначала дешевле</option>
@@ -81,7 +81,7 @@
       <section class="col-12 col-lg-9" aria-labelledby="catalog-heading">
         <h2 class="h4" id="catalog-heading">Товары для рабочего места</h2>
         <p class="text-body-secondary" id="results-count" role="status">Найдено товаров: 3</p>
-        <div class="alert alert-warning d-none" id="empty-results">Товары не найдены. Попробуйте изменить или сбросить фильтры.</div>
+        <div class="alert alert-warning d-none" id="empty-results">Пока ничего не нашлось. Попробуйте другую цену или сбросьте фильтры.</div>
         <div class="row g-3" id="catalog-products">
         <div class="col-12 col-md-6 col-lg-4" data-category="lamp" data-price="1490">
           <article class="card h-100">
@@ -89,7 +89,7 @@
             <div class="card-body d-flex flex-column">
               <p><span class="badge text-bg-primary">Хит</span></p>
               <h3 class="h5 card-title">Лампа «Линия»</h3>
-              <p class="card-text">Настольная лампа для чтения и работы.</p>
+              <p class="card-text">Для вечерней учёбы, чтения и работы за столом.</p>
               <p class="fs-5 fw-bold mt-auto">1 490 ₽</p>
               <div class="d-flex flex-wrap gap-2">
                 <a class="btn btn-outline-primary btn-sm" href="product.html?product=lamp">Подробнее</a>
@@ -104,7 +104,7 @@
             <div class="card-body d-flex flex-column">
               <p><span class="badge text-bg-success">Новинка</span></p>
               <h3 class="h5 card-title">Органайзер «Порядок»</h3>
-              <p class="card-text">Для ручек и других мелочей на столе.</p>
+              <p class="card-text">Ручки, карандаши и мелочи больше не теряются на столе.</p>
               <p class="fs-5 fw-bold mt-auto">890 ₽</p>
               <div class="d-flex flex-wrap gap-2">
                 <a class="btn btn-outline-primary btn-sm" href="product.html?product=organizer">Подробнее</a>
@@ -119,7 +119,7 @@
             <div class="card-body d-flex flex-column">
               <p><span class="badge text-bg-danger">Скидка</span></p>
               <h3 class="h5 card-title">Блокнот «Точка опоры»</h3>
-              <p class="card-text">Для заметок, планов и учебных конспектов.</p>
+              <p class="card-text">Записывайте идеи, стройте планы и делайте заметки на парах.</p>
               <p class="fs-5 fw-bold mt-auto">320 ₽</p>
               <div class="d-flex flex-wrap gap-2">
                 <a class="btn btn-outline-primary btn-sm" href="product.html?product=notebook">Подробнее</a>
@@ -151,11 +151,11 @@
         <div class="modal-body">
           <p class="fw-bold" id="modal-product">Лампа «Линия»</p>
           <p id="modal-price">1 490 ₽</p>
-          <p class="mb-0">В заявке можно указать количество и способ получения.</p>
+          <p class="mb-0">Подходит? Перейдите к заявке — там можно выбрать количество и способ получения.</p>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Продолжить выбор</button>
-          <a class="btn btn-primary" id="modal-order-link" href="order.html?product=lamp">Перейти к заявке</a>
+          <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Ещё посмотрю</button>
+          <a class="btn btn-primary" id="modal-order-link" href="order.html?product=lamp">Оформить заявку</a>
         </div>
       </div>
     </div>

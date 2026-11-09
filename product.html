@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Товар. Магазин предметов для рабочего стола.">
+  <meta name="description" content="Посмотрите характеристики, выберите товар и переходите к заявке.">
   <title>Товар — Магазин</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/custom.css">
@@ -32,7 +32,7 @@
   </header>
 
   <main class="container py-4 flex-grow-1">
-    <noscript><div class="alert alert-warning">Для фильтров, выбора товара и проверки заявки нужен JavaScript.</div></noscript>
+    <noscript><div class="alert alert-warning">Включите JavaScript в браузере, чтобы пользоваться фильтрами и формой заявки.</div></noscript>
     <nav aria-label="Хлебные крошки">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
@@ -46,14 +46,14 @@
       <div class="col-12 col-md-6">
         <span class="badge text-bg-primary mb-2" id="product-badge">Хит</span>
         <h1 id="product-title">Лампа «Линия»</h1>
-        <p id="product-description">Настольная лампа для чтения и работы.</p>
+        <p id="product-description">Для вечерней учёбы, чтения и работы за столом.</p>
         <p class="fs-3 fw-bold" id="product-price">1 490 ₽</p>
         <p class="text-success">В наличии</p>
         <div class="d-flex flex-wrap gap-2">
           <button class="btn btn-primary" id="product-order" type="button" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="lamp">Заказать</button>
           <a class="btn btn-outline-secondary" href="catalog.html">Назад в каталог</a>
         </div>
-        <div class="alert alert-info mt-3">Способы получения: самовывоз или доставка. <a class="alert-link" href="contacts.html">Подробнее</a></div>
+        <div class="alert alert-info mt-3">Заберите сами или выберите доставку за 300 ₽. <a class="alert-link" href="contacts.html">Подробнее</a></div>
       </div>
     </div>
 
@@ -64,7 +64,7 @@
           <button class="nav-link active" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs" type="button" role="tab" aria-controls="specs" aria-selected="true">Характеристики</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="care-tab" data-bs-toggle="tab" data-bs-target="#care" type="button" role="tab" aria-controls="care" aria-selected="false">Уход</button>
+          <button class="nav-link" id="care-tab" data-bs-toggle="tab" data-bs-target="#care" type="button" role="tab" aria-controls="care" aria-selected="false">Как ухаживать</button>
         </li>
       </ul>
       <div class="tab-content pt-3">
@@ -82,7 +82,7 @@
           </div>
         </div>
         <div class="tab-pane fade" id="care" role="tabpanel" aria-labelledby="care-tab" tabindex="0">
-          <p class="mb-0" id="product-care">Протирать сухой мягкой тканью. Перед очисткой отключать лампу от сети.</p>
+          <p class="mb-0" id="product-care">Перед уборкой отключите лампу от сети, затем протрите её сухой мягкой тканью.</p>
         </div>
       </div>
     </section>
@@ -106,11 +106,11 @@
         <div class="modal-body">
           <p class="fw-bold" id="modal-product">Лампа «Линия»</p>
           <p id="modal-price">1 490 ₽</p>
-          <p class="mb-0">В заявке можно указать количество и способ получения.</p>
+          <p class="mb-0">Подходит? Перейдите к заявке — там можно выбрать количество и способ получения.</p>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Продолжить выбор</button>
-          <a class="btn btn-primary" id="modal-order-link" href="order.html?product=lamp">Перейти к заявке</a>
+          <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Ещё посмотрю</button>
+          <a class="btn btn-primary" id="modal-order-link" href="order.html?product=lamp">Оформить заявку</a>
         </div>
       </div>
     </div>

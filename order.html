@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Заявка. Магазин предметов для рабочего стола.">
+  <meta name="description" content="Выберите количество, способ получения и проверьте итоговую сумму заявки.">
   <title>Заявка — Магазин</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/custom.css">
@@ -32,27 +32,27 @@
   </header>
 
   <main class="container py-4 flex-grow-1">
-    <noscript><div class="alert alert-warning">Для фильтров, выбора товара и проверки заявки нужен JavaScript.</div></noscript>
+    <noscript><div class="alert alert-warning">Включите JavaScript в браузере, чтобы пользоваться фильтрами и формой заявки.</div></noscript>
     <nav aria-label="Хлебные крошки">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
         <li class="breadcrumb-item active" aria-current="page">Заявка</li>
       </ol>
     </nav>
-    <h1 class="mb-3">Заявка на товар</h1>
-    <div class="alert alert-info">Это учебный магазин. Данные формы проверяются в браузере и никуда не отправляются.</div>
+    <h1 class="mb-3">Соберём вашу заявку</h1>
+    <div class="alert alert-info">Выберите товар, укажите количество и удобный способ получения.</div>
     <div class="row g-4">
       <div class="col-12 col-lg-8">
         <form class="bg-white border rounded p-3 p-md-4" id="order-form">
-          <p class="text-body-secondary">Поля со звёздочкой обязательны.</p>
+          <p class="text-body-secondary">Заполните поля со звёздочкой, чтобы проверить заявку.</p>
           <div class="row g-3">
             <div class="col-12 col-md-6">
               <label class="form-label" for="name">Имя *</label>
-              <input class="form-control" id="name" name="name" type="text" minlength="2" maxlength="80" autocomplete="given-name" required>
+              <input class="form-control" id="name" name="name" type="text" minlength="2" maxlength="80" autocomplete="given-name" placeholder="Как к вам обращаться?" required>
             </div>
             <div class="col-12 col-md-6">
               <label class="form-label" for="email">E-mail *</label>
-              <input class="form-control" id="email" name="email" type="email" autocomplete="email" required>
+              <input class="form-control" id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com" required>
             </div>
             <div class="col-12">
               <label class="form-label" for="phone">Телефон *</label>
@@ -60,7 +60,7 @@
                 <span class="input-group-text" id="phone-prefix">+7</span>
                 <input class="form-control" id="phone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="9001234567" autocomplete="tel-national" aria-describedby="phone-prefix phone-help" required>
               </div>
-              <div class="form-text" id="phone-help">Введите 10 цифр без +7, пробелов и скобок.</div>
+              <div class="form-text" id="phone-help">+7 уже указали. Осталось ввести 10 цифр без пробелов и скобок.</div>
             </div>
             <div class="col-12 col-md-8">
               <label class="form-label" for="order-product">Товар *</label>
@@ -84,7 +84,7 @@
             </div>
             <div class="col-12">
               <label class="form-label" for="comment">Комментарий</label>
-              <textarea class="form-control" id="comment" name="comment" rows="3" maxlength="1000" placeholder="Удобное время связи или вопрос о товаре"></textarea>
+              <textarea class="form-control" id="comment" name="comment" rows="3" maxlength="1000" placeholder="Есть вопрос или пожелание? Напишите здесь."></textarea>
             </div>
             <div class="col-12">
               <div class="form-check">
@@ -97,6 +97,7 @@
               <button class="btn btn-outline-secondary" type="reset">Очистить</button>
             </div>
           </div>
+          <p class="small text-body-secondary mt-3 mb-0">Пока это демоверсия: можно заполнить форму и проверить сумму, но отправка заявки ещё не подключена.</p>
         </form>
         <div class="alert alert-success d-none mt-3" id="order-success" role="status" tabindex="-1"></div>
       </div>
@@ -104,13 +105,13 @@
         <div class="card">
           <div class="card-body">
             <h2 class="h5">Ваша заявка</h2>
-            <p id="summary-product">Выберите товар в форме.</p>
+            <p id="summary-product">Выберите товар — здесь появится сумма.</p>
             <p class="mb-1">Товары: <span id="summary-subtotal">0 ₽</span></p>
             <p>Доставка: <span id="summary-delivery">0 ₽</span></p>
             <p class="fs-5 fw-bold mb-0" role="status">Итого: <span id="summary-total">0 ₽</span></p>
           </div>
         </div>
-        <p class="small text-body-secondary mt-3">Цена пересчитывается при выборе товара, количества и способа получения.</p>
+        <p class="small text-body-secondary mt-3">Меняйте количество и способ получения — итог обновится сам.</p>
       </aside>
     </div>
   </main>
@@ -133,11 +134,11 @@
         <div class="modal-body">
           <p class="fw-bold" id="modal-product">Лампа «Линия»</p>
           <p id="modal-price">1 490 ₽</p>
-          <p class="mb-0">В заявке можно указать количество и способ получения.</p>
+          <p class="mb-0">Подходит? Перейдите к заявке — там можно выбрать количество и способ получения.</p>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Продолжить выбор</button>
-          <a class="btn btn-primary" id="modal-order-link" href="order.html?product=lamp">Перейти к заявке</a>
+          <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Ещё посмотрю</button>
+          <a class="btn btn-primary" id="modal-order-link" href="order.html?product=lamp">Оформить заявку</a>
         </div>
       </div>
     </div>
