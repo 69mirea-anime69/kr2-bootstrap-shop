@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Каталог. Магазин предметов для рабочего стола.">
+  <title>Каталог — Магазин</title>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <header class="bg-white border-bottom">
+    <nav class="navbar navbar-expand-lg" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="index.html">Магазин</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Открыть меню">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-menu">
+          <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link active" href="catalog.html" aria-current="page">Каталог</a></li>
+          <li class="nav-item"><a class="nav-link" href="product.html">Товар</a></li>
+          <li class="nav-item"><a class="nav-link" href="order.html">Заявка</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container py-4 flex-grow-1">
+    <noscript><div class="alert alert-warning">Для фильтров, выбора товара и проверки заявки нужен JavaScript.</div></noscript>
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Каталог</li>
+      </ol>
+    </nav>
+    <h1 class="mb-3">Каталог товаров</h1>
+    <div class="row g-4">
+      <aside class="col-12 col-lg-3">
+        <form class="bg-white border rounded p-3" id="filter-form">
+          <h2 class="h5">Фильтры</h2>
+          <div class="mb-3">
+            <label class="form-label" for="search">Название</label>
+            <input class="form-control" id="search" name="search" type="search" placeholder="Например, лампа">
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="category">Категория</label>
+            <select class="form-select" id="category" name="category">
+              <option value="all">Все товары</option>
+              <option value="lamp">Освещение</option>
+              <option value="organizer">Для стола</option>
+              <option value="notebook">Блокноты</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="max-price">Цена до</label>
+            <div class="input-group">
+              <input class="form-control" id="max-price" name="max-price" type="number" min="0" placeholder="Любая">
+              <span class="input-group-text">₽</span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="sort">Порядок товаров</label>
+            <select class="form-select" id="sort" name="sort">
+              <option value="default">По умолчанию</option>
+              <option value="cheap">Сначала дешевле</option>
+              <option value="expensive">Сначала дороже</option>
+            </select>
+          </div>
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-primary btn-sm" type="submit">Применить</button>
+            <button class="btn btn-outline-secondary btn-sm" type="reset">Сбросить</button>
+          </div>
+        </form>
+      </aside>
+      <section class="col-12 col-lg-9" aria-labelledby="catalog-heading">
+        <h2 class="h4" id="catalog-heading">Товары для рабочего места</h2>
+        <p class="text-body-secondary" id="results-count" role="status">Найдено товаров: 3</p>
+        <div class="alert alert-warning d-none" id="empty-results">Товары не найдены. Попробуйте изменить или сбросить фильтры.</div>
+        <div class="row g-3" id="catalog-products">
+        <div class="col-12 col-md-6 col-lg-4" data-category="lamp" data-price="1490">
+          <article class="card h-100">
+            <a href="product.html?product=lamp"><img class="card-img-top product-image" src="images/lamp.svg" alt="Лампа «Линия»"></a>
+            <div class="card-body d-flex flex-column">
+              <p><span class="badge text-bg-primary">Хит</span></p>
+              <h3 class="h5 card-title">Лампа «Линия»</h3>
+              <p class="card-text">Настольная лампа для чтения и работы.</p>
+              <p class="fs-5 fw-bold mt-auto">1 490 ₽</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a class="btn btn-outline-primary btn-sm" href="product.html?product=lamp">Подробнее</a>
+                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="lamp">Заказать</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4" data-category="organizer" data-price="890">
+          <article class="card h-100">
+            <a href="product.html?product=organizer"><img class="card-img-top product-image" src="images/organizer.svg" alt="Органайзер «Порядок»"></a>
+            <div class="card-body d-flex flex-column">
+              <p><span class="badge text-bg-success">Новинка</span></p>
+              <h3 class="h5 card-title">Органайзер «Порядок»</h3>
+              <p class="card-text">Для ручек и других мелочей на столе.</p>
+              <p class="fs-5 fw-bold mt-auto">890 ₽</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a class="btn btn-outline-primary btn-sm" href="product.html?product=organizer">Подробнее</a>
+                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="organizer">Заказать</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4" data-category="notebook" data-price="320">
+          <article class="card h-100">
+            <a href="product.html?product=notebook"><img class="card-img-top product-image" src="images/notebook.svg" alt="Блокнот «Точка опоры»"></a>
+            <div class="card-body d-flex flex-column">
+              <p><span class="badge text-bg-danger">Скидка</span></p>
+              <h3 class="h5 card-title">Блокнот «Точка опоры»</h3>
+              <p class="card-text">Для заметок, планов и учебных конспектов.</p>
+              <p class="fs-5 fw-bold mt-auto">320 ₽</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a class="btn btn-outline-primary btn-sm" href="product.html?product=notebook">Подробнее</a>
+                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="notebook">Заказать</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="bg-white border-top py-3 mt-4">
+    <div class="container d-flex flex-wrap justify-content-between gap-2">
+      <p class="mb-0 text-body-secondary">Магазин предметов для рабочего стола</p>
+      <a href="contacts.html">Контакты и доставка</a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap сам открывает и закрывает окно через data-bs-* -->
+  <div class="modal fade" id="order-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="modal-title">Выбранный товар</h2>
+          <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p class="fw-bold" id="modal-product">Лампа «Линия»</p>
+          <p id="modal-price">1 490 ₽</p>
+          <p class="mb-0">В заявке можно указать количество и способ получения.</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Продолжить выбор</button>
+          <a class="btn btn-primary" id="modal-order-link" href="order.html?product=lamp">Перейти к заявке</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

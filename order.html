@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Заявка. Магазин предметов для рабочего стола.">
+  <title>Заявка — Магазин</title>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <header class="bg-white border-bottom">
+    <nav class="navbar navbar-expand-lg" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="index.html">Магазин</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Открыть меню">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-menu">
+          <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+          <li class="nav-item"><a class="nav-link" href="product.html">Товар</a></li>
+          <li class="nav-item"><a class="nav-link active" href="order.html" aria-current="page">Заявка</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container py-4 flex-grow-1">
+    <noscript><div class="alert alert-warning">Для фильтров, выбора товара и проверки заявки нужен JavaScript.</div></noscript>
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Заявка</li>
+      </ol>
+    </nav>
+    <h1 class="mb-3">Заявка на товар</h1>
+    <div class="alert alert-info">Это учебный магазин. Данные формы проверяются в браузере и никуда не отправляются.</div>
+    <div class="row g-4">
+      <div class="col-12 col-lg-8">
+        <form class="bg-white border rounded p-3 p-md-4" id="order-form">
+          <p class="text-body-secondary">Поля со звёздочкой обязательны.</p>
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <label class="form-label" for="name">Имя *</label>
+              <input class="form-control" id="name" name="name" type="text" minlength="2" maxlength="80" autocomplete="given-name" required>
+            </div>
+            <div class="col-12 col-md-6">
+              <label class="form-label" for="email">E-mail *</label>
+              <input class="form-control" id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="phone">Телефон *</label>
+              <div class="input-group">
+                <span class="input-group-text" id="phone-prefix">+7</span>
+                <input class="form-control" id="phone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="9001234567" autocomplete="tel-national" aria-describedby="phone-prefix phone-help" required>
+              </div>
+              <div class="form-text" id="phone-help">Введите 10 цифр без +7, пробелов и скобок.</div>
+            </div>
+            <div class="col-12 col-md-8">
+              <label class="form-label" for="order-product">Товар *</label>
+              <select class="form-select" id="order-product" name="product" required>
+                <option value="">Выберите товар</option>
+                <option value="lamp">Лампа «Линия»</option>
+                <option value="organizer">Органайзер «Порядок»</option>
+                <option value="notebook">Блокнот «Точка опоры»</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label" for="quantity">Количество *</label>
+              <input class="form-control" id="quantity" name="quantity" type="number" value="1" min="1" max="10" step="1" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="delivery">Способ получения *</label>
+              <select class="form-select" id="delivery" name="delivery" required>
+                <option value="pickup">Самовывоз — бесплатно</option>
+                <option value="delivery">Доставка — 300 ₽</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="comment">Комментарий</label>
+              <textarea class="form-control" id="comment" name="comment" rows="3" maxlength="1000" placeholder="Удобное время связи или вопрос о товаре"></textarea>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" id="consent" name="consent" type="checkbox" required>
+                <label class="form-check-label" for="consent">Согласен на обработку данных *</label>
+              </div>
+            </div>
+            <div class="col-12 d-flex flex-wrap gap-2">
+              <button class="btn btn-primary" type="submit">Отправить заявку</button>
+              <button class="btn btn-outline-secondary" type="reset">Очистить</button>
+            </div>
+          </div>
+        </form>
+        <div class="alert alert-success d-none mt-3" id="order-success" role="status" tabindex="-1"></div>
+      </div>
+      <aside class="col-12 col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="h5">Ваша заявка</h2>
+            <p id="summary-product">Выберите товар в форме.</p>
+            <p class="mb-1">Товары: <span id="summary-subtotal">0 ₽</span></p>
+            <p>Доставка: <span id="summary-delivery">0 ₽</span></p>
+            <p class="fs-5 fw-bold mb-0" role="status">Итого: <span id="summary-total">0 ₽</span></p>
+          </div>
+        </div>
+        <p class="small text-body-secondary mt-3">Цена пересчитывается при выборе товара, количества и способа получения.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="bg-white border-top py-3 mt-4">
+    <div class="container d-flex flex-wrap justify-content-between gap-2">
+      <p class="mb-0 text-body-secondary">Магазин предметов для рабочего стола</p>
+      <a href="contacts.html">Контакты и доставка</a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap сам открывает и закрывает окно через data-bs-* -->
+  <div class="modal fade" id="order-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="modal-title">Выбранный товар</h2>
+          <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p class="fw-bold" id="modal-product">Лампа «Линия»</p>
+          <p id="modal-price">1 490 ₽</p>
+          <p class="mb-0">В заявке можно указать количество и способ получения.</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Продолжить выбор</button>
+          <a class="btn btn-primary" id="modal-order-link" href="order.html?product=lamp">Перейти к заявке</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

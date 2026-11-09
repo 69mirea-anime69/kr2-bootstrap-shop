@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Контакты. Магазин предметов для рабочего стола.">
+  <title>Контакты — Магазин</title>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <header class="bg-white border-bottom">
+    <nav class="navbar navbar-expand-lg" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="index.html">Магазин</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Открыть меню">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-menu">
+          <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+          <li class="nav-item"><a class="nav-link" href="product.html">Товар</a></li>
+          <li class="nav-item"><a class="nav-link" href="order.html">Заявка</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contacts.html" aria-current="page">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container py-4 flex-grow-1">
+    <noscript><div class="alert alert-warning">Для фильтров, выбора товара и проверки заявки нужен JavaScript.</div></noscript>
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Контакты</li>
+      </ol>
+    </nav>
+    <h1 class="mb-3">Контакты и доставка</h1>
+    <div class="row g-4">
+      <section class="col-12 col-md-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="h4">Как связаться</h2>
+            <p>E-mail: <a href="mailto:hello@tochka.example">hello@tochka.example</a></p>
+            <p>Время работы: пн-пт, с 10:00 до 18:00.</p>
+            <p class="text-body-secondary">Контакты и условия приведены для примера учебного магазина.</p>
+            <a class="btn btn-primary" href="order.html">Оставить заявку</a>
+          </div>
+        </div>
+      </section>
+      <section class="col-12 col-md-7" aria-labelledby="faq-heading">
+        <h2 class="h4" id="faq-heading">Частые вопросы</h2>
+        <div class="accordion" id="faq">
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-order" aria-expanded="true" aria-controls="faq-order">Как выбрать товар?</button></h3>
+            <div class="accordion-collapse collapse show" id="faq-order" data-bs-parent="#faq">
+              <div class="accordion-body">Откройте каталог, сравните характеристики и нажмите «Заказать». Выбранный товар автоматически появится в форме заявки.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-delivery" aria-expanded="false" aria-controls="faq-delivery">Сколько стоит доставка?</button></h3>
+            <div class="accordion-collapse collapse" id="faq-delivery" data-bs-parent="#faq">
+              <div class="accordion-body">В учебном примере доставка стоит 300 ₽, самовывоз бесплатный. Стоимость учитывается в итоговой сумме заявки.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-payment" aria-expanded="false" aria-controls="faq-payment">Нужно ли оплачивать заявку?</button></h3>
+            <div class="accordion-collapse collapse" id="faq-payment" data-bs-parent="#faq">
+              <div class="accordion-body">Нет. Это учебный сайт без настоящих покупок, платежей и отправки персональных данных.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="bg-white border-top py-3 mt-4">
+    <div class="container d-flex flex-wrap justify-content-between gap-2">
+      <p class="mb-0 text-body-secondary">Магазин предметов для рабочего стола</p>
+      <a href="contacts.html">Контакты и доставка</a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap сам открывает и закрывает окно через data-bs-* -->
+  <div class="modal fade" id="order-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="modal-title">Выбранный товар</h2>
+          <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p class="fw-bold" id="modal-product">Лампа «Линия»</p>
+          <p id="modal-price">1 490 ₽</p>
+          <p class="mb-0">В заявке можно указать количество и способ получения.</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Продолжить выбор</button>
+          <a class="btn btn-primary" id="modal-order-link" href="order.html?product=lamp">Перейти к заявке</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

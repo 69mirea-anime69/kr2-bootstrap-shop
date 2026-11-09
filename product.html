@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Товар. Магазин предметов для рабочего стола.">
+  <title>Товар — Магазин</title>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <header class="bg-white border-bottom">
+    <nav class="navbar navbar-expand-lg" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="index.html">Магазин</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Открыть меню">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-menu">
+          <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+          <li class="nav-item"><a class="nav-link active" href="product.html" aria-current="page">Товар</a></li>
+          <li class="nav-item"><a class="nav-link" href="order.html">Заявка</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container py-4 flex-grow-1">
+    <noscript><div class="alert alert-warning">Для фильтров, выбора товара и проверки заявки нужен JavaScript.</div></noscript>
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Товар</li>
+      </ol>
+    </nav>
+    <div class="row g-4 mb-4">
+      <div class="col-12 col-md-6">
+        <img class="img-fluid border rounded bg-white product-detail-image" id="product-image" src="images/lamp.svg" alt="Лампа «Линия»">
+      </div>
+      <div class="col-12 col-md-6">
+        <span class="badge text-bg-primary mb-2" id="product-badge">Хит</span>
+        <h1 id="product-title">Лампа «Линия»</h1>
+        <p id="product-description">Настольная лампа для чтения и работы.</p>
+        <p class="fs-3 fw-bold" id="product-price">1 490 ₽</p>
+        <p class="text-success">В наличии</p>
+        <div class="d-flex flex-wrap gap-2">
+          <button class="btn btn-primary" id="product-order" type="button" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="lamp">Заказать</button>
+          <a class="btn btn-outline-secondary" href="catalog.html">Назад в каталог</a>
+        </div>
+        <div class="alert alert-info mt-3">Способы получения: самовывоз или доставка. <a class="alert-link" href="contacts.html">Подробнее</a></div>
+      </div>
+    </div>
+
+    <section class="bg-white border rounded p-3">
+      <h2 class="h3 mb-3">О товаре</h2>
+      <ul class="nav nav-tabs" id="product-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs" type="button" role="tab" aria-controls="specs" aria-selected="true">Характеристики</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="care-tab" data-bs-toggle="tab" data-bs-target="#care" type="button" role="tab" aria-controls="care" aria-selected="false">Уход</button>
+        </li>
+      </ul>
+      <div class="tab-content pt-3">
+        <div class="tab-pane fade show active" id="specs" role="tabpanel" aria-labelledby="specs-tab" tabindex="0">
+          <div class="table-responsive">
+            <table class="table table-bordered mb-0">
+              <caption>Основные характеристики</caption>
+              <thead><tr><th scope="col">Параметр</th><th scope="col">Значение</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Материал</th><td id="product-material">Металл</td></tr>
+                <tr><th scope="row">Цвет</th><td id="product-color">Жёлтый и зелёный</td></tr>
+                <tr><th scope="row">Размер</th><td id="product-size">Высота 38 см</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="care" role="tabpanel" aria-labelledby="care-tab" tabindex="0">
+          <p class="mb-0" id="product-care">Протирать сухой мягкой тканью. Перед очисткой отключать лампу от сети.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white border-top py-3 mt-4">
+    <div class="container d-flex flex-wrap justify-content-between gap-2">
+      <p class="mb-0 text-body-secondary">Магазин предметов для рабочего стола</p>
+      <a href="contacts.html">Контакты и доставка</a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap сам открывает и закрывает окно через data-bs-* -->
+  <div class="modal fade" id="order-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="modal-title">Выбранный товар</h2>
+          <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p class="fw-bold" id="modal-product">Лампа «Линия»</p>
+          <p id="modal-price">1 490 ₽</p>
+          <p class="mb-0">В заявке можно указать количество и способ получения.</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Продолжить выбор</button>
+          <a class="btn btn-primary" id="modal-order-link" href="order.html?product=lamp">Перейти к заявке</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
