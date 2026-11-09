@@ -2,21 +2,21 @@
 const products = {
   lamp: {
     name: 'Лампа «Линия»', price: 1490, badge: 'Хит', color: 'primary',
-    description: 'Настольная лампа для чтения и работы.',
+    description: 'Для вечерней учёбы, чтения и работы за столом.',
     material: 'Металл', shade: 'Жёлтый и зелёный', size: 'Высота 38 см',
-    care: 'Протирать сухой мягкой тканью. Перед очисткой отключать лампу от сети.'
+    care: 'Перед уборкой отключите лампу от сети, затем протрите её сухой мягкой тканью.'
   },
   organizer: {
     name: 'Органайзер «Порядок»', price: 890, badge: 'Новинка', color: 'success',
-    description: 'Для ручек и других мелочей на столе.',
+    description: 'Ручки, карандаши и мелочи больше не теряются на столе.',
     material: 'Пластик', shade: 'Зелёный', size: '24 × 12 × 14 см',
-    care: 'Протирать влажной тканью, затем вытирать насухо.'
+    care: 'Протрите влажной тканью и вытрите насухо — этого достаточно.'
   },
   notebook: {
     name: 'Блокнот «Точка опоры»', price: 320, badge: 'Скидка', color: 'danger',
-    description: 'Для заметок, планов и учебных конспектов.',
+    description: 'Записывайте идеи, стройте планы и делайте заметки на парах.',
     material: 'Бумага, картон', shade: 'Розовый', size: 'А5, 80 листов',
-    care: 'Хранить в сухом месте, не сгибать обложку.'
+    care: 'Берегите от воды и не сгибайте обложку, чтобы страницы дольше оставались аккуратными.'
   }
 };
 
@@ -112,14 +112,14 @@ if (orderForm) {
     const validCount = Number.isInteger(count) && count >= 1 && count <= 10;
     const subtotal = product && validCount ? product.price * count : 0;
     const deliveryPrice = product && validCount && delivery.value === 'delivery' ? 300 : 0;
-    document.getElementById('summary-product').textContent = product ? product.name : 'Выберите товар в форме.';
+    document.getElementById('summary-product').textContent = product ? product.name : 'Выберите товар — здесь появится сумма.';
     document.getElementById('summary-subtotal').textContent = money(subtotal);
     document.getElementById('summary-delivery').textContent = money(deliveryPrice);
     document.getElementById('summary-total').textContent = money(subtotal + deliveryPrice);
   }
 
   nameInput.addEventListener('input', function () {
-    nameInput.setCustomValidity(nameInput.value.trim().length < 2 ? 'Введите имя: минимум две буквы.' : '');
+    nameInput.setCustomValidity(nameInput.value.trim().length < 2 ? 'Подскажите, как к вам обращаться: нужно хотя бы два символа.' : '');
   });
   orderForm.addEventListener('input', function () {
     success.classList.add('d-none');
@@ -133,9 +133,9 @@ if (orderForm) {
   });
   orderForm.addEventListener('submit', function (event) {
     event.preventDefault();
-    success.textContent = 'Учебная заявка проверена. Товар: ' + products[productSelect.value].name +
+    success.textContent = 'Всё заполнено! Вы выбрали: ' + products[productSelect.value].name +
       ', количество: ' + quantity.value + '. Итого: ' + document.getElementById('summary-total').textContent +
-      '. Данные никуда не отправлены.';
+      '. Проверьте выбор — если нужно, данные ещё можно изменить.';
     success.classList.remove('d-none');
     success.focus();
   });
