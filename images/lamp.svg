@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 360" role="img" aria-labelledby="title">
+  <title id="title">Настольная лампа Линия</title>
+  <ellipse cx="218" cy="324" rx="145" ry="14" fill="#d4d0c3"/>
+  <path d="M175 294h91l23 23H153z" fill="#315d52"/>
+  <path d="M204 287h31l5 12h-41z" fill="#24483f"/>
+  <path d="m213 283 34-113 13 5-28 111z" fill="#315d52"/>
+  <circle cx="251" cy="173" r="13" fill="#24483f"/>
+  <path d="M203 181c-10 0-18-8-18-18v-5h124l-12 60h-66z" fill="#efbd55"/>
+  <path d="M185 158h124l-2 13H187z" fill="#f5d078"/>
+  <path d="M239 219h57" stroke="#d6a339" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="253" cy="179" r="3" fill="#fff5d9"/>
+</svg>

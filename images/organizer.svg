@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 360" role="img" aria-labelledby="title">
+  <title id="title">Настольный органайзер Порядок</title>
+  <ellipse cx="220" cy="322" rx="145" ry="13" fill="#cbd9d6"/>
+  <path d="M92 181h256l-15 124H107z" fill="#315d52"/>
+  <path d="M108 198h224l-11 106H120z" fill="#3b6d61"/>
+  <path d="M110 180c0-12 10-22 22-22h37v33h-59z" fill="#efbd55"/>
+  <path d="M174 174c0-12 10-22 22-22h33v39h-55z" fill="#f2dedc"/>
+  <path d="M232 180c0-12 10-22 22-22h58c12 0 22 10 22 22v11H232z" fill="#d9e8e2"/>
+  <path d="M125 225h50m-50 20h37m-37 20h51" stroke="#76a195" stroke-width="5" stroke-linecap="round"/>
+  <path d="M201 197v107" stroke="#24483f" stroke-width="3"/>
+  <circle cx="278" cy="226" r="12" fill="#efbd55"/>
+  <rect x="273" y="218" width="10" height="55" rx="5" fill="#efbd55"/>
+</svg>

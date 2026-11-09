@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 360" role="img" aria-labelledby="title">
+  <title id="title">Блокнот Точка опоры</title>
+  <ellipse cx="220" cy="320" rx="125" ry="14" fill="#dfcfcd"/>
+  <g transform="rotate(-8 220 190)">
+    <rect x="137" y="60" width="172" height="242" rx="10" fill="#315d52"/>
+    <rect x="151" y="60" width="158" height="242" rx="9" fill="#e9b9b5"/>
+    <path d="M171 60v242" stroke="#d78e88" stroke-width="4"/>
+    <path d="M195 126h91M195 149h91M195 172h74" stroke="#fff3e9" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="235" cy="222" r="22" fill="#efbd55"/>
+    <circle cx="235" cy="222" r="5" fill="#315d52"/>
+    <path d="M151 84h158" stroke="#f5d9d5" stroke-width="2"/>
+  </g>
+</svg>
